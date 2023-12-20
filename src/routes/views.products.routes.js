@@ -6,7 +6,7 @@ const viewsRouter = Router();
 // app.get('/', (req, res) => {
 //     res.render('home')
 // })
-viewsRouter.get('/home', async (req, res) => {
+viewsRouter.get('/', async (req, res) => {
     try {
         // const {data : products} = await axios.get('http://localhost:8080/api/products/');
         const products = await productManager.getProducts();

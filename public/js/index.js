@@ -3,7 +3,7 @@ const socket = io();
 const form = document.getElementById('form');
 const container = document.getElementById('container'); 
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
     const product = {
@@ -17,16 +17,6 @@ form.addEventListener('submit', event => {
     socket.emit("client:addProduct", product);
     form.reset();
 })
-
-// socket.on("products", async data => {
-//     const products = await data;
-//     console.log('prodcusts reveived desde index product[0]', products[0]);
-// })
-
-// 1.-
-// socket.on('newConnection', data => {
-//     console.log(data);
-// })
 
 socket.on("server:renderProducts", data => {
     let products = ''

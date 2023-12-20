@@ -1,6 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
-import { Server as WebSocketServer } from 'socket.io';
+import { Server } from 'socket.io';
 import productsRouter from './routes/products.routes.js';
 import cartsRouter from './routes/carts.routes.js';
 import viewsRouter from './routes/views.products.routes.js';
@@ -29,18 +29,15 @@ const httpServer = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
 
-const socketServer = new WebSocketServer(httpServer);
+const socketServer = new Server(httpServer);
 
 socketServer.on('connection', async socket => {
     console.log('New client connected', socket.id);
-
     // Escuchar cuando se agregar un producto
     socket.on("client:addProduct", async (data) => {
         try {
-            // const product = await productManager.addProduct(data);
             await productManager.addProduct(data);
             const products = await productManager.getProducts()
-            // socketServer.emit('products', products);
             socketServer.emit("server:renderProducts", products);
         } catch (error) {
             console.log('Error desde socket.on("product_send", async (data)', error); 
@@ -52,7 +49,6 @@ socketServer.on('connection', async socket => {
             const id = await data;
             await productManager.deleteProduct(+id);
             const products = await productManager.getProducts();
-            // socketServer.emit('products', products);
             socketServer.emit("server:renderProducts", products);
         } catch (error) {
             console.log(error);  
@@ -62,7 +58,6 @@ socketServer.on('connection', async socket => {
     // Escuchar cuando se elimina un producto
     const products = await productManager.getProducts();
     socketServer.emit("server:renderProducts", products);
-    // socket.broadcast.emit('updatedProducts', products);
 })
 
 
