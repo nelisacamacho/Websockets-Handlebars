@@ -35,9 +35,9 @@ socket.on("products_received", data => {
         <h3>Id: ${product.id}</h3>
         <h4>Title: ${product.title}</h4>
         <p>Description: ${product.description}</p>
-        <p>Price: ${Number(product.price)}</p>
+        <p>Price: ${product.price}</p>
         <p>Code: ${product.code}</p>
-        <p>Stock: ${Number(product.stock)}</p>
+        <p>Stock: ${product.stock}</p>
         <p>Available: ${product.available}</p>
         <img height="300px" width="auto" src=${product.thumbnail} alt="">
         <button class="deleteButton" data-id="${product.id}">Delete</button>

@@ -34,14 +34,14 @@ class ProductManager {
                 id: await this.#generateId(),
                 title, 
                 description, 
-                price,
+                price: Number(price),
                 thumbnail: [].concat(thumbnail || []).map(String),
-                code, 
-                stock,
+                code,
+                stock: Number(stock),
                 available: true
             }
             products.push(newProduct)
-            await fs.promises.writeFile(this.path, JSON.stringify(products), 'utf-8');
+            await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"), 'utf-8');
             return newProduct;
         } catch (error) {
             console.error(error);

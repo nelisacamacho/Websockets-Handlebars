@@ -1,6 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
-import { Server, Socket } from 'socket.io';
+import { Server as WebSocketServer } from 'socket.io';
 import productsRouter from './routes/products.routes.js';
 import cartsRouter from './routes/carts.routes.js';
 import viewsRouter from './routes/views.products.routes.js';
@@ -29,10 +29,10 @@ const httpServer = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
 
-const socketServer = new Server(httpServer);
+const socketServer = new WebSocketServer(httpServer);
 
-socketServer.on('connect', async socket => {
-    console.log('New client connected');
+socketServer.on('connection', async socket => {
+    console.log('New client connected', socket.id);
 
     // Escuchar cuando se agregar un producto
     socket.on("newProduct", async (data) => {
