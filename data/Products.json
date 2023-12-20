@@ -144,35 +144,13 @@
 		"available": true
 	},
 	{
-		"id": 13,
-		"title": "Asus Vivobook 15",
-		"description": "Asus Vivobook 15",
-		"price": 200,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
-		],
-		"code": "abc12222oo3",
-		"stock": 52,
-		"available": true
-	},
-	{
-		"id": 14,
-		"title": "Asus Vivobook 15",
-		"description": "Asus Vivobook 15",
-		"price": 200,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
-		],
-		"code": "abc122212oo3",
-		"stock": 52,
-		"available": true
-	},
-	{
 		"id": 15,
 		"title": "Asus Vivobook 15",
 		"description": "Asus Vivobook 15",
 		"price": 200,
-		"thumbnail": "https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg",
+		"thumbnail": [
+			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
+		],
 		"code": "abc122212oo3x",
 		"stock": 52,
 		"available": true
@@ -186,18 +164,6 @@
 			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
 		],
 		"code": "abc1222h12oo3x",
-		"stock": 52,
-		"available": true
-	},
-	{
-		"id": 17,
-		"title": "Asus Vivobook 15",
-		"description": "Asus Vivobook 15",
-		"price": 200,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
-		],
-		"code": "abc1222h1s2oo3x",
 		"stock": 52,
 		"available": true
 	},
@@ -243,9 +209,7 @@
 		"description": "Asus Vivobook 15",
 		"price": 200,
 		"thumbnail": [
-			[
-				"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
-			]
+			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
 		],
 		"code": "abc1222h12oo3axsssss",
 		"stock": 52,
@@ -363,14 +327,50 @@
 	},
 	{
 		"id": 32,
-		"title": "prueba32",
+		"title": "Prueba32",
 		"description": "prueba32",
-		"price": 9980,
+		"price": 2234,
+		"thumbnail": [
+			"https://m.media-amazon.com/images/I/81VpmqLls-L._AC_SL1500_.jpg"
+		],
+		"code": "prueba32",
+		"stock": 38,
+		"available": true
+	},
+	{
+		"id": 33,
+		"title": "Prueba33",
+		"description": "prueba33",
+		"price": 2734,
+		"thumbnail": [
+			"https://m.media-amazon.com/images/I/61CXQT1XRfL._AC_SL1000_.jpg"
+		],
+		"code": "Prueba33",
+		"stock": 29,
+		"available": true
+	},
+	{
+		"id": 34,
+		"title": "prueba34",
+		"description": "prueba34",
+		"price": 484,
+		"thumbnail": [
+			"https://m.media-amazon.com/images/I/61LyIe34PVL._AC_SX522_.jpg"
+		],
+		"code": "prueba34",
+		"stock": 928,
+		"available": true
+	},
+	{
+		"id": 35,
+		"title": "prueba35",
+		"description": "prueba35",
+		"price": 234,
 		"thumbnail": [
 			"https://m.media-amazon.com/images/I/91EZHMzCu4L._AC_SL1500_.jpg"
 		],
-		"code": "prueba32",
-		"stock": 54,
+		"code": "prueba35",
+		"stock": 882,
 		"available": true
 	}
 ]

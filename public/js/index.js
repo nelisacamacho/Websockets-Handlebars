@@ -19,18 +19,21 @@ form.addEventListener('submit', (event) => {
 })
 
 socket.on("server:renderProducts", data => {
+    // console.log(data);
     let products = ''
     data.forEach(product => {
+        // console.log(product);
+        // console.log(product.id, product.thumbnail[0]);
         products +=`<div class="product__card">
-        <h3>Id: ${product.id}</h3>
-        <h4>Title: ${product.title}</h4>
-        <p>Description: ${product.description}</p>
-        <p>Price: ${product.price}</p>
-        <p>Code: ${product.code}</p>
-        <p>Stock: ${product.stock}</p>
-        <p>Available: ${product.available}</p>
-        <img height="300px" width="auto" src=${product.thumbnail} alt="">
-        <button class="deleteButton" data-id="${product.id}">Delete</button>
+        <h3>Id: ${product?.id}</h3>
+        <h4>Title: ${product?.title}</h4>
+        <p>Description: ${product?.description}</p>
+        <p>Price: ${product?.price}</p>
+        <p>Code: ${product?.code}</p>
+        <p>Stock: ${product?.stock}</p>
+        <p>Available: ${product?.available}</p>
+        <img height="240px" width="auto" src=${product?.thumbnail[0]} alt=${product?.title} draggable="false">
+        <button class="deleteButton" data-id="${product?.id}">Delete</button>
     </div>`
     })
     container.innerHTML = products;

@@ -44,15 +44,13 @@ socketServer.on('connection', async socket => {
         }
     });
 
-    socket.on("client:deleteProduct", async data => {
-        try {
-            const id = await data;
-            await productManager.deleteProduct(+id);
-            const products = await productManager.getProducts();
-            socketServer.emit("server:renderProducts", products);
-        } catch (error) {
-            console.log(error);  
-        }
+    socket.on("client:deleteProduct", async productId => {
+            const result = await productManager.deleteProduct(+productId);
+            if(result) {
+                socketServer.emit("server:renderProducts", await productManager.getProducts());
+            }
+            // const products = await productManager.getProducts();
+            // socketServer.emit("server:renderProducts", products);
     })
 
     // Escuchar cuando se elimina un producto
