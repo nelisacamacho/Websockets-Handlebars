@@ -1,7 +1,6 @@
 const socket = io();
 
 const form = document.getElementById('form');
-// const submit = document.getElementById('sumbit');
 const container = document.getElementById('container'); 
 
 form.addEventListener('submit', event => {
@@ -24,6 +23,11 @@ form.addEventListener('submit', event => {
 //     console.log('prodcusts reveived desde index product[0]', products[0]);
 // })
 
+// 1.-
+// socket.on('newConnection', data => {
+//     console.log(data);
+// })
+
 socket.on("products_received", data => {
     let products = ''
     data.forEach(product => {
@@ -31,14 +35,22 @@ socket.on("products_received", data => {
         <h3>Id: ${product.id}</h3>
         <h4>Title: ${product.title}</h4>
         <p>Description: ${product.description}</p>
-        <p>Price: ${product.price}</p>
+        <p>Price: ${Number(product.price)}</p>
         <p>Code: ${product.code}</p>
-        <p>Stock: ${product.stock}</p>
+        <p>Stock: ${Number(product.stock)}</p>
         <p>Available: ${product.available}</p>
-            <img height="300px" width="auto" src=${product.thumbnail} alt="">
+        <img height="300px" width="auto" src=${product.thumbnail} alt="">
+        <button class="deleteButton" data-id="${product.id}">Delete</button>
     </div>`
     })
     container.innerHTML = products;
-})
+    const deleteButtons = document.querySelectorAll('.deleteButton');
+    deleteButtons.forEach((button) => {
+        const pid = button.dataset.id;
+        button.addEventListener("click", () => {
+                socket.emit('deleteProduct', +pid);
+        });
+    });
+});
 
 

@@ -114,7 +114,6 @@ class ProductManager {
             await fs.promises.writeFile(this.path, JSON.stringify(updateProducts), 'utf-8');
             return true;
         } catch (error) {
-            console.error(error)
             return {error}
         }
     }
