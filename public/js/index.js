@@ -14,7 +14,7 @@ form.addEventListener('submit', event => {
         code: formData.get('code'),
         stock: formData.get('stock'),
     };
-    socket.emit("newProduct", product);
+    socket.emit("client:addProduct", product);
     form.reset();
 })
 
@@ -28,7 +28,7 @@ form.addEventListener('submit', event => {
 //     console.log(data);
 // })
 
-socket.on("products_received", data => {
+socket.on("server:renderProducts", data => {
     let products = ''
     data.forEach(product => {
         products +=`<div class="product__card">
@@ -48,7 +48,7 @@ socket.on("products_received", data => {
     deleteButtons.forEach((button) => {
         const pid = button.dataset.id;
         button.addEventListener("click", () => {
-                socket.emit('deleteProduct', +pid);
+                socket.emit('client:deleteProduct', +pid);
         });
     });
 });

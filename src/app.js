@@ -35,25 +35,25 @@ socketServer.on('connection', async socket => {
     console.log('New client connected', socket.id);
 
     // Escuchar cuando se agregar un producto
-    socket.on("newProduct", async (data) => {
+    socket.on("client:addProduct", async (data) => {
         try {
             // const product = await productManager.addProduct(data);
             await productManager.addProduct(data);
             const products = await productManager.getProducts()
             // socketServer.emit('products', products);
-            socketServer.emit("products_received", products);
+            socketServer.emit("server:renderProducts", products);
         } catch (error) {
             console.log('Error desde socket.on("product_send", async (data)', error); 
         }
     });
 
-    socket.on("deleteProduct", async data => {
+    socket.on("client:deleteProduct", async data => {
         try {
             const id = await data;
             await productManager.deleteProduct(+id);
             const products = await productManager.getProducts();
             // socketServer.emit('products', products);
-            socketServer.emit("products_received", products);
+            socketServer.emit("server:renderProducts", products);
         } catch (error) {
             console.log(error);  
         }
@@ -61,7 +61,7 @@ socketServer.on('connection', async socket => {
 
     // Escuchar cuando se elimina un producto
     const products = await productManager.getProducts();
-    socketServer.emit("products_received", products);
+    socketServer.emit("server:renderProducts", products);
     // socket.broadcast.emit('updatedProducts', products);
 })
 

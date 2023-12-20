@@ -96,7 +96,7 @@ class ProductManager {
                 ...values,
                 id
             }
-            await fs.promises.writeFile(this.path, JSON.stringify(products), 'utf-8');
+            await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"), 'utf-8');
             return await this.getProductById(id);
         } catch (error) {
             console.error(error)
@@ -111,7 +111,7 @@ class ProductManager {
             const product = products.find(product => product.id === productId);
             if(!product) return false
             const updateProducts = await products.filter(product => product.id !== productId);
-            await fs.promises.writeFile(this.path, JSON.stringify(updateProducts), 'utf-8');
+            await fs.promises.writeFile(this.path, JSON.stringify(updateProducts, null, "\t"), 'utf-8');
             return true;
         } catch (error) {
             return {error}

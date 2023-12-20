@@ -362,87 +362,15 @@
 		"available": true
 	},
 	{
-		"id": 57,
-		"title": "Asus Vivobook 15",
-		"description": "Asus Vivobook 15",
-		"price": 200,
+		"id": 32,
+		"title": "prueba32",
+		"description": "prueba32",
+		"price": 9980,
 		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
+			"https://m.media-amazon.com/images/I/91EZHMzCu4L._AC_SL1500_.jpg"
 		],
-		"code": "abc12229991",
-		"stock": 52,
-		"available": true
-	},
-	{
-		"id": 61,
-		"title": "Asus Vivobook 15 Last",
-		"description": "Asus Vivobook 15",
-		"price": 200,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
-		],
-		"code": "abc1222999",
-		"stock": 52,
-		"available": true
-	},
-	{
-		"id": 62,
-		"title": "Mobile",
-		"description": "Mobile",
-		"price": "12",
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61aGanMnfFL._AC_SL1500_.jpg"
-		],
-		"code": "234",
-		"stock": "10",
-		"available": true
-	},
-	{
-		"id": 63,
-		"title": "prueba",
-		"description": "prueba",
-		"price": "123",
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
-		],
-		"code": "87u6s6",
-		"stock": "10",
-		"available": true
-	},
-	{
-		"id": 64,
-		"title": "prueba64",
-		"description": "prueba64",
-		"price": 10000,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
-		],
-		"code": "prueba64",
-		"stock": 10,
-		"available": true
-	},
-	{
-		"id": 65,
-		"title": "product64",
-		"description": "product65",
-		"price": 30404,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
-		],
-		"code": "product65",
-		"stock": 300,
-		"available": true
-	},
-	{
-		"id": 66,
-		"title": "prueba66",
-		"description": "prueba66",
-		"price": 878,
-		"thumbnail": [
-			"https://m.media-amazon.com/images/I/61CHqS31PiL._AC_SL1500_.jpg"
-		],
-		"code": "prueba66",
-		"stock": 989,
+		"code": "prueba32",
+		"stock": 54,
 		"available": true
 	}
 ]
