@@ -1,0 +1,54 @@
+p {
+    font-weight: 500;
+    size: 1rem;
+    color: blue;
+}
+.main {
+    display: flex;
+    justify-content: center;
+}
+.card__container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.product__card {
+    width: 46%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    border-color: black;
+    padding: .5rem;
+    margin: 1rem;
+    min-height: max-content;
+}
+img, form {
+    display: block;
+    margin: 0 auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* border: 1px solid lightgrey; */
+    padding-inline: 1rem;
+    justify-content: center;
+}
+label {
+    margin-top: 1rem;
+}
+input {
+    width: 100%;
+    /* margin-bottom: 1rem; */
+    height: 2rem;
+    font-size: medium;
+}
+.button {
+    height: 2rem;
+    margin-top: 1rem;
+    background-color: lightgrey;
+    border: 2px solid lightgrey;
+    cursor: pointer;
+}

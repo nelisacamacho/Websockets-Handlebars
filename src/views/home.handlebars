@@ -1,0 +1,20 @@
+<div class="main">
+    <div class="card__container">
+        {{#each products}}
+            <div class="product__card">
+                <h4>Title: {{this.title}} </h4>
+                <p>Description: {{this.description}}</p>
+                <p>Price: {{this.price}}</p>
+                <p>Code: {{this.code}}</p>
+                <p>Stock: {{this.stock}}</p>
+                <p>Available: {{this.available}}</p>
+                {{#if this.thumbnail}}
+                    <img height="300px" width="auto" src={{this.thumbnail}} alt="">
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+
